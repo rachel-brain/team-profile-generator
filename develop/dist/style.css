@@ -1,0 +1,33 @@
+* {
+    box-sizing: border-box;
+}
+
+/* Color palette */
+:root {
+    --blue: #3961ab;
+    --green: #008080;
+    --medium-grey: #827c7c;
+    --black: #000;
+    --white: #ffffff;
+}
+
+body {
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    width: 100vw;
+    margin: 0;
+    background-color: var(--pale-grey);
+}
+
+h1 {
+    font-size: 50px;
+    color: var(--white);
+    background-color: var(--green);
+    text-align: center;
+}
+
+.card-title {
+    font-size: 35px;
+    color: var(--white);
+    background-color: var(--blue);
+    padding-left: 5px;
+}

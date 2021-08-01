@@ -1,18 +1,7 @@
 // Access packages needed for the application
 const inquirer = require('inquirer');
 const fs = require('fs');
-const generateHtml = require('./utils/generateHtml');
-
-
-
-// THEN I am prompted to enter the team manager’s name, employee ID, email address, and office number
-// WHEN I enter the team manager’s name, employee ID, email address, and office number
-// THEN I am presented with a menu with the option to add an engineer or an intern or to finish building my team
-// WHEN I select the engineer option
-// THEN I am prompted to enter the engineer’s name, ID, email, and GitHub username, and I am taken back to the menu
-// WHEN I select the intern option
-
-// SEPARATE QUESTIONS FOR MANAGER/INTERN/ENGINEER, etc?
+const generateHtml = require('./dist/generateHtml');
 
 
 // Array of questions for user input
@@ -33,9 +22,9 @@ const questions = [{
     },
     {
         type: 'checkbox',
-        message: 'What is the position of this Team Member?',
-        name: 'position',
-        choices: [' Manager', ' Engineer', ' Intern', ' Other'],
+        message: 'What is the role of this Team Member?',
+        name: 'role',
+        choices: [' Manager', ' Engineer', ' Intern'],
     },
     // If a Team Manager
     {
@@ -43,6 +32,48 @@ const questions = [{
         message: 'What is the office number of your Team Manager?',
         name: 'office',
     },
-
-
+    // If an Engineer
+    {
+        type: 'input',
+        message: 'What is the GitHub user name of your Engineer?',
+        name: 'github',
+    },
+    // If an Intern
+    {
+        type: 'input',
+        message: 'Which school is the Intern attending?',
+        name: 'school',
+    },
+    // To continue adding employees
+    {
+        type: 'confirm',
+        message: 'Would you like to add another Employee?',
+        name: 'add',
+    }
 ]
+
+
+getName();
+getID();
+getEmail();
+getRole();
+getOffice();
+getGithub();
+getSchool();
+
+// Create a function to initialize app
+function init() {
+    inquirer.prompt(questions)
+        .then((answers) => {
+            const fileName = 'index.html';
+            const htmlPageContent = generateHtml(answers);
+
+            // Create a function to write HTML file
+            fs.writeFile(fileName, htmlPageContent, (err) => {
+                err ? console.log(err) : console.log('Successfully created HTML')
+            });
+        });
+}
+
+// Call the function to initialize app
+init();
