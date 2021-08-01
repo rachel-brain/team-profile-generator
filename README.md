@@ -47,14 +47,14 @@ The application will be invoked by typing the following command in the terminal 
 npm i inquirer
 ```
 
-Then, typing the following command in the terminal will initiate the prompts to collate the information required in the README file:
+Then, typing the following command in the terminal will initiate the prompts to collate the information required in the HTML webpage:
 
 ```bash
 node index.js
 ```
     
 ## Usage
-The user will be presented with a series of prompts about their Team Members which s/he will answer until they complete the information for each Employee.
+The user will be presented with a series of prompts about their Team Members which s/he will answer until the information is complete for each Employee.  A message will be seen in the terminal saying "Successfully created HTML".  The user will then open the index.html file in their browser to see their team profile page.
 
 
 

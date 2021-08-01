@@ -23,11 +23,28 @@ h1 {
     color: var(--white);
     background-color: var(--green);
     text-align: center;
+    line-height: 3.0;
+}
+
+.card-header {
+    background-color: var(--blue);
+    padding: 10px;
+    border-radius: 5px 0 0 5px;
 }
 
 .card-title {
-    font-size: 35px;
+    font-size: 25px;
     color: var(--white);
-    background-color: var(--blue);
+}
+
+.card-body {
+    background-color: var(--medium-grey);
+    border-radius: 0 0 5px 5px;
+}
+
+li {
+    font-size: 15px;
+    color: var(--black);
+    background-color: var(--white);
     padding-left: 5px;
 }
