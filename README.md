@@ -9,7 +9,7 @@ A Node.js command-line application which takes in employee information and gener
 ```md
 AS A manager
 I WANT to generate a webpage that displays my team's basic info
-SO THAT I have quick access to their emails and GitHub profiles
+SO THAT I have quick access to their email addresses and GitHub profiles
 ```
 
 ## Acceptance Criteria
@@ -47,10 +47,17 @@ The application will be invoked by typing the following command in the terminal 
 npm i inquirer
 ```
 
-Then, typing the following command in the terminal will initiate the prompts to collate the information required in the HTML webpage:
+Then, typing the following command in the terminal to initiate the prompts to collate the information required in the HTML webpage:
 
 ```bash
 node index.js
+```
+
+Then, typing the following command in the terminal to install JEST and then run the tests to verify that the program is running correctly for each Team Member inputted:
+
+```bash
+npm i jest
+npm run test
 ```
     
 ## Usage

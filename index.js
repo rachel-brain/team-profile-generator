@@ -56,24 +56,7 @@ const questions = [{
     }
 ]
 
-// Create a function to initialize app
-// function init() {
-//     inquirer.prompt(questions)
-//         .then((answers) => {
-
-//             const fileName = 'index.html';
-//             const htmlPageContent = generateHtml(answers);
-
-//             // Create a function to write HTML file
-//             fs.writeFile(fileName, htmlPageContent, (err) => {
-//                 err ? console.log(err) : console.log('Successfully created HTML')
-//             });
-//         });
-// }
-
-// const fileName = 'index.html';
-// const htmlPageContent = generateHtml(answers);
-
+// Create a function to run questions again for another Employee
 function runAgain() {
     // To continue adding employees
     inquirer.prompt({
@@ -93,6 +76,7 @@ function runAgain() {
         });
 };
 
+// Create a function to render the HTML page once all Team Members have been added
 function renderPage(answers) {
     const fileName = 'index.html';
     const htmlPageContent = generateHtml(answers);
