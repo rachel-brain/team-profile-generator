@@ -31,28 +31,28 @@ const questions = [{
         type: 'checkbox',
         message: 'What is the role of this Team Member?',
         name: 'role',
-        choices: [' Manager', ' Engineer', ' Intern']
+        choices: ['Manager', 'Engineer', 'Intern']
     },
     // If a Team Manager
     {
         type: 'input',
         message: 'What is the office number of your Team Manager?',
         name: 'office',
-        when: (answers) => answers.role === ' Manager'
+        when: (answers) => answers.role[0] === 'Manager'
     },
     // If an Engineer
     {
         type: 'input',
         message: 'What is the GitHub user name of your Engineer?',
         name: 'github',
-        when: (answers) => answers.role === ' Engineer'
+        when: (answers) => answers.role[0] === 'Engineer'
     },
     // If an Intern
     {
         type: 'input',
         message: 'Which school is your Intern attending?',
         name: 'school',
-        when: (answers) => answers.role === ' Intern'
+        when: (answers) => answers.role[0] === 'Intern'
     }
 ]
 
@@ -66,12 +66,12 @@ function runAgain() {
         })
         .then(function (addEmployee) {
             // If yes, rerun the questions
-            if (addEmployee.again == true) {
+            if (addEmployee.add == true) {
                 init();
             }
             // If no, render the HTML file
-            if (addEmployee.again == false) {
-                renderPage();
+            if (addEmployee.add == false) {
+                renderPage(employees);
             };
         });
 };
@@ -80,6 +80,7 @@ function runAgain() {
 function renderPage(answers) {
     const fileName = 'index.html';
     const htmlPageContent = generateHtml(answers);
+    console.log(employees);
 
     fs.writeFile(fileName, htmlPageContent, (err) => {
         err ? console.log(err) : console.log('Successfully created HTML')
@@ -92,17 +93,17 @@ function init() {
     inquirer.prompt(questions)
         .then((answers) => {
             // Create each employee object depending on role & push to the employees array
-            if (answers.role === ' Manager') {
+            if (answers.role[0] === 'Manager') {
                 employees.push(
                     new Manager(answers.name, answers.id, answers.email, answers.office)
                 );
             }
-            if (answers.role === ' Intern') {
+            if (answers.role[0] === 'Intern') {
                 employees.push(
                     new Intern(answers.name, answers.id, answers.email, answers.school)
                 );
             }
-            if (answers.role === ' Engineer') {
+            if (answers.role[0] === 'Engineer') {
                 employees.push(
                     new Engineer(answers.name, answers.id, answers.email, answers.github)
                 );

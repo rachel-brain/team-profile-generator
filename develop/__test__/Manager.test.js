@@ -1,6 +1,5 @@
 const Employee = require("../lib/Employee");
 const Manager = require("../lib/Manager");
-const Manager = require("../lib/Manager");
 
 describe(" Manager", () => {
     // Test for all use cases when initializing a new Manager object

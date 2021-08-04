@@ -11,8 +11,8 @@ describe(" Engineer", () => {
             expect(engineer.id).toEqual(12345);
             expect(engineer.email).toEqual("rachel.brain@gmail.com");
             expect(engineer.github).toEqual("rachel-brain");
-            expect(intern.office).toEqual(undefined);
-            expect(intern.school).toEqual(undefined);
+            expect(engineer.office).toEqual(undefined);
+            expect(engineer.school).toEqual(undefined);
         });
 
         it("should throw an error if provided no arguments", () => {

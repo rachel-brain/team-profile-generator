@@ -7,6 +7,8 @@ const Employee = require('./Employee');
 class Engineer extends Employee {
     constructor(name, id, email, github) {
 
+        // if one of the items is undefined throw an error - COMPLETE THIS FOR EACH TEAM MEMBER
+
         // Define "super" in order for the "extension" to work
         super(name, id, email);
 
@@ -18,7 +20,7 @@ class Engineer extends Employee {
     }
 
     getRole() {
-        return ' Engineer';
+        return 'Engineer';
     }
 };
 

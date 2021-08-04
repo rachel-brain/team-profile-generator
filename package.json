@@ -2,5 +2,19 @@
   "dependencies": {
     "inquirer": "^8.1.2",
     "jest": "^27.0.6"
-  }
+  },
+  "name": "team-profile-generator",
+  "description": "A Node.js command-line application which takes in employee information and generates a team profile on an HTML webpage",
+  "version": "1.0.0",
+  "main": "index.js",
+  "devDependencies": {},
+  "scripts": {
+    "test": "jest"
+  },
+  "repository": {
+    "type": "git",
+    "url": "'"
+  },
+  "author": "",
+  "license": "ISC"
 }

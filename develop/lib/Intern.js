@@ -7,6 +7,8 @@ const Employee = require('./Employee');
 class Intern extends Employee {
     constructor(name, id, email, school) {
 
+        // if one of the items is undefined throw an error - COMPLETE THIS FOR EACH TEAM MEMBER
+
         // Define "super" in order for the "extension" to work
         super(name, id, email);
 
@@ -18,7 +20,7 @@ class Intern extends Employee {
     }
 
     getRole() {
-        return ' Intern';
+        return 'Intern';
     }
 };
 
