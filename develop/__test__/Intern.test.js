@@ -1,7 +1,7 @@
 const Employee = require("../lib/Employee");
 const Intern = require("../lib/Intern");
 
-describe(" Intern", () => {
+describe("Intern", () => {
     // Test for all use cases when initializing a new Intern object
     describe("Initialization", () => {
         it("should create a new Intern object (card) with name, id, email address and school attending", () => {
@@ -18,9 +18,12 @@ describe(" Intern", () => {
         it("should throw an error if provided no arguments", () => {
             // Wrap the object initialization in a callback function that Jest will run
             const cb = () => new Intern();
+            const err = new Error(
+                "Expected parameter 'text' to be a non empty string"
+            );
 
             // Verify that an error was thrown in the callback function
-            expect(cb).toThrow();
+            expect(cb).toThrow(err);
         });
     });
 });

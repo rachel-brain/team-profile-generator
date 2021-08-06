@@ -48,3 +48,7 @@ li {
     background-color: var(--white);
     padding-left: 5px;
 }
+
+.hide {
+    display: none;
+}

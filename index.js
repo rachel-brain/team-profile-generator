@@ -83,13 +83,12 @@ function renderPage(answers) {
     console.log(employees);
 
     fs.writeFile(fileName, htmlPageContent, (err) => {
-        err ? console.log(err) : console.log('Successfully created HTML')
+        err ? console.log(err) : console.log('Successfully created HTML webpage')
     });
 };
 
 // Create a function to initialize app
 function init() {
-    // inquirer.prompt(questions.employee)
     inquirer.prompt(questions)
         .then((answers) => {
             // Create each employee object depending on role & push to the employees array

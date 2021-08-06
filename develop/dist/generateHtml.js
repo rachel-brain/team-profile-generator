@@ -26,23 +26,29 @@ function generateHtml(employees) {
 
 // Function
 function cardGenerator(employee) {
-    return `<div class="card" style="width: 22rem;">
-        <div class="card-header">
-            <h2 class="card-title">${employee.name}</h2>
-            <h2 class="card-title">${addIcon(employee.getRole())}
+    return `<div class="container">
+            <div class="row">
+            <div class="col-lg-6 mb-4">
+            <div class="card">
+            <div class="card-header">
+                <h2 class="card-title">${employee.name}</h2>
+                <h2 class="card-title">${addIcon(employee.getRole())}
             ${employee.getRole()}</h2>
-        </div>
-        <div class="card-body">   
-        <ul class="list-group list-group-flush">
-            <li class="list-group-item">ID number: ${employee.id}</li>
-            <li class="list-group-item">E-mail: ${employee.email}</li>
-            <li class="list-group-item">Office number: ${employee.getRole() === 'Manager' ? employee.office: 'not available'}</li>
-            <li class="list-group-item">GitHub user name: ${employee.getRole() === 'Engineer' ? employee.github: 'not available'}</li>
-            <li class="list-group-item">School attending: ${employee.getRole() === 'Intern' ? employee.school: 'not available'}</li>
-        </ul>
-        </div>
-    </div>        
-        `
+            </div>
+            <div class="card-body">   
+            <ul class="list-group list-group-flush">
+                <li class="list-group-item">ID number: ${employee.id}</li>
+                <li class="list-group-item">E-mail: <a href="mailto:${employee.email}">${employee.email}</a></li>
+                <li class="list-group-item">Office number: ${employee.getRole() === 'Manager' ? employee.office: 'n/a'}</li>
+                <li class="list-group-item">GitHub user name: ${employee.getRole() === 'Engineer' ? employee.github: 'n/a'}</li>
+                <li class="list-group-item">School attending: ${employee.getRole() === 'Intern' ? employee.school: 'n/a'}</li>
+            </ul>
+            </div>
+            </div>
+            </div>
+            </div>
+            </div>
+            `
 }
 
 

@@ -7,8 +7,6 @@ const Employee = require('./Employee');
 class Manager extends Employee {
     constructor(name, id, email, office) {
 
-        // if one of the items is undefined throw an error - COMPLETE THIS FOR EACH TEAM MEMBER
-
         // Define "super" in order for the "extension" to work
         super(name, id, email);
 
@@ -16,6 +14,9 @@ class Manager extends Employee {
     }
 
     getOffice() {
+        if (typeof office !== "string") {
+            throw new Error("Expected parameter 'office' to be a non-empty string");
+        }
         return this.office;
     }
 
